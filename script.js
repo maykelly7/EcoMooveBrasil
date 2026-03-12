@@ -46,3 +46,38 @@ gsap.utils.toArray(".card").forEach((card, i) => {
         ease: "power3.out"
     });
 });
+
+const counters = document.querySelectorAll(".counter");
+
+const startCounters = () => {
+    counters.forEach(counter => {
+
+        const target = +counter.getAttribute("data-target");
+        let count = 0;
+
+        const update = () => {
+            const increment = target / 120;
+
+            if (count < target) {
+                count += increment;
+                counter.innerText = Math.floor(count).toLocaleString("pt-BR");
+                requestAnimationFrame(update);
+            } else {
+                counter.innerText = target.toLocaleString("pt-BR");
+            }
+        };
+
+        update();
+    });
+};
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            startCounters();
+            observer.disconnect();
+        }
+    });
+});
+
+observer.observe(document.querySelector(".stats"));
