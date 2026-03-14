@@ -7,31 +7,32 @@
     <title>Eco Moove Brasil</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
     <header>
-        <div class="logo">LEVA MOTORS</div>
+        <div class="logo">ECO MOOVE</div>
         <nav>
             <ul>
-                <li><a href="#">Modelos</a></li>
-                <li><a href="#">Tecnologia</a></li>
-                <li><a href="#">Showroom</a></li>
+                <li><a href="#products">Modelos</a></li>
+                <li><a href="#loja">Loja</a></li>
+                <li><a href="#">Contato</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="hero">
-        <div class="hero-bg"><img src="./img/image0.jpeg" alt="" srcset=""></div>
+        <div class="hero-bg"><img src="./img/ChatGPT Image 14 de mar. de 2026, 11_55_30.png" alt="" srcset=""></div>
         <div class="hero-content">
             <h1>REDEFININDO<br>O MOVIMENTO</h1>
             <p>Performance elétrica. Design atemporal.</p>
-            <button class="btn">Test Drive</button>
+            
         </div>
     </section>
 
-    <section class="products">
+    <section class="products" id="products">
 
         <div class="section-header">
             <h2>Nossa Coleção</h2>
@@ -44,7 +45,7 @@
                 <div class="card-info">
                     <h3>Leva eScooter</h3>
                     <p>Scooter elétrica urbana, silenciosa e econômica.</p>
-                    <a href="#" class="card-link">Ver Especificações</a>
+                    <a href="./pages/home_prods.html" class="card-link">Ver Mais</a>
                 </div>
             </div>
 
@@ -53,14 +54,14 @@
                 <div class="card-info">
                     <h3>Leva Electric Street</h3>
                     <p>Moto elétrica esportiva com design moderno e alta eficiência.</p>
-                    <a href="#" class="card-link">Ver Especificações</a>
+                    <a href="./pages/home_prods.html" class="card-link">Ver Mais</a>
                 </div>
             </div>
 
             <div class="explore-card">
                 <h3>Explore a Coleção Completa</h3>
                 <p>Descubra todos os modelos e tecnologias que oferecemos.</p>
-                <button class="btn">Ver Todos</button>
+                <a href="./pages/home_prods.html" class="btn">Ver Todos</a>
             </div>
 
         </div>
@@ -96,8 +97,114 @@
 
     </section>
 
-    <footer>
-        <p>&copy; 2023 Leva Motors Clone. Todos os direitos reservados.</p>
+    <section class="gallery" id="loja">
+
+        <div class="gallery-header">
+            <h2>Nossa Loja</h2>
+            <p>Conheça nossos espaços e experiências</p>
+        </div>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item large">
+                <img src="./img/image0.jpeg" alt="">
+            </div>
+
+            <div class="gallery-item">
+                <img src="./img/image6.jpeg" alt="">
+            </div>
+
+            <div class="gallery-item">
+                <img src="./img/image2.jpeg" alt="">
+            </div>
+
+            <div class="gallery-item wide">
+                <img src="./img/image7.jpeg" alt="">
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Seção 1: Informações da Empresa -->
+            <div class="footer-section">
+                <div class="footer-logo">SUA LOJA</div>
+                <p>A melhor loja com os melhores preços. Qualidade garantida para você!</p>
+                <div class="footer-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <strong>Rua Exemplo, 123</strong><br>
+                        Bairro Centro, São Paulo - SP<br>
+                        CEP: 01234-567
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção 2: Links Rápidos -->
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+
+            <!-- Seção 3: Contato -->
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+5511999999999">(11) 99999-9999</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:contato@sualoja.com">contato@sualoja.com</a>
+                </div>
+                <div class="contact-item whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <a href="https://wa.me/5511999999999" target="_blank">Fale pelo WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Seção 4: Redes Sociais -->
+            <div class="footer-section">
+                <h3>Siga-nos</h3>
+                <div class="social-links">
+                    <a href="https://instagram.com/sualoja" target="_blank" class="social-btn instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://facebook.com/sualoja" target="_blank" class="social-btn facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://wa.me/5511999999999" target="_blank" class="social-btn whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#" class="social-btn tiktok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+                <div class="payment-methods">
+                    <img src="https://via.placeholder.com/120x40/000/fff?text=PAGUE+COM" alt="Formas de Pagamento">
+                    <div class="payment-icons">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                        <i class="fas fa-credit-card"></i>
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Sua Loja. Todos os direitos reservados. |
+                <a href="#">Política de Privacidade</a> |
+                <a href="#">Termos de Uso</a>
+            </p>
+        </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
