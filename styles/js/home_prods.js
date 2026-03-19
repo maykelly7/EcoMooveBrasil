@@ -1,8 +1,8 @@
 const motos = [
     {
         id: 1,
-        nome: "EG1 Essencial",
-        preco: 15900,
+        nome: "EG1 Essential",
+        preco: 22900,
         imagens: ["../img/modelo1.jpeg", "../img/modelo2.jpeg", "../img/modelo3.jpeg"],
         thumb: "../img/modelo1.jpeg",
         descricao: "EG1 Essencial - Scooter elétrica urbana ideal para o dia a dia. Econômica, silenciosa e sustentável.",
@@ -17,8 +17,8 @@ const motos = [
     },
     {
         id: 2,
-        nome: "JET 1000W",
-        preco: 18900,
+        nome: "ES1",
+        preco: 21500,
         imagens: ["../img/modelo4.jpeg", "../img/modelo5.jpeg", "../img/modelo6.jpeg"],
         thumb: "../img/modelo4.jpeg",
         descricao: "JET 1000W - Scooter elétrica com ótimo desempenho urbano, design esportivo e baixo custo de manutenção.",
@@ -36,7 +36,7 @@ const motos = [
         nome: "DOT 1000W",
         preco: 24900,
         imagens: ["../img/modelo7.jpeg", "../img/modelo8.jpeg", "../img/modelo9.jpeg"],
-        thumb: "../img/modelo7.jpeg",
+        thumb: "../img/modelo8.jpeg",
         descricao: "DOT 1000W - Scooter elétrica moderna com ótima autonomia e bateria de alta durabilidade.",
         km: "0 km",
         ano: "2024/2025",

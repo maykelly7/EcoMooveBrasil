@@ -18,6 +18,26 @@ body {
     padding: 0 20px;
 }
 
+.logo-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-hero img {
+    width: 20%;
+    max-width: 80%;
+    height: auto;
+    opacity: 0.9;
+    filter: drop-shadow(0 10px 30px rgba(0, 255, 136, 0.3));
+    transition: all 0.3s ease;
+}
+
+.logo-hero img:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
 /* HEADER COMUM */
 header {
     background: rgba(0, 0, 0, 0.95);
