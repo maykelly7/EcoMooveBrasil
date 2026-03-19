@@ -1,28 +1,147 @@
 const motos = [
-    // MESMO ARRAY das motos acima - copie exatamente igual
+    {
+        id: 1,
+        nome: "EG1 Essencial",
+        preco: 15900,
+        imagens: ["../img/modelo1.jpeg", "../img/modelo2.jpeg"],
+        thumb: "../img/modelo1.jpeg",
+        descricao: "EG1 Essencial - Scooter elétrica ideal para mobilidade urbana. Econômica, silenciosa e fácil de pilotar.",
+        km: "0 km",
+        ano: "2023/2024",
+        cor: "Preto",
+        potencia: "1000W",
+        autonomia: "60 km",
+        velocidade: "45 km/h",
+        bateria: "Lítio 60V 20Ah",
+        telefone: "5511999999999"
+    },
+    {
+        id: 2,
+        nome: "JET 1000W",
+        preco: 18900,
+        imagens: ["../img/modelo4.jpeg", "../img/modelo5.jpeg", "../img/modelo6.jpeg", "../img/modelo3.jpeg"],
+        thumb: "../img/modelo4.jpeg",
+        descricao: "JET 1000W - Scooter elétrica com design esportivo e ótimo desempenho para o dia a dia.",
+        km: "0 km",
+        ano: "2023/2024",
+        cor: "Azul Escuro",
+        potencia: "1000W",
+        autonomia: "70 km",
+        velocidade: "50 km/h",
+        bateria: "Lítio 60V 25Ah",
+        telefone: "5511999999999"
+    },
+    {
+        id: 3,
+        nome: "DOT 1000W",
+        preco: 24900,
+        imagens: ["../img/modelo8.jpeg", "../img/modelo9.jpeg", "../img/modelo13.jpeg"],
+        thumb: "../img/modelo7.jpeg",
+        descricao: "DOT 1000W - Scooter elétrica moderna com excelente autonomia e bateria de longa duração.",
+        km: "0 km",
+        ano: "2024/2025",
+        cor: "Preta Fosca",
+        potencia: "1000W",
+        autonomia: "80 km",
+        velocidade: "55 km/h",
+        bateria: "Lítio 60V 30Ah",
+        telefone: "5511999999999"
+    },
+    {
+        id: 4,
+        nome: "X12 1000W",
+        preco: 28900,
+        imagens: ["../img/modelo10.jpeg"],
+        thumb: "../img/modelo10.jpeg",
+        descricao: "X12 1000W - Scooter elétrica premium com maior potência, conforto e tecnologia.",
+        km: "0 km",
+        ano: "2024/2025",
+        cor: "Prata/Preta",
+        potencia: "1200W",
+        autonomia: "90 km",
+        velocidade: "60 km/h",
+        bateria: "Lítio 72V 30Ah",
+        telefone: "5511999999999"
+    },
+    {
+        id: 5,
+        nome: "X12 1000W (Versão Sport)",
+        preco: 29900,
+        imagens: [
+            "../img/modelo11.jpeg",
+            "../img/modelo12.jpeg",
+            "../img/modelo13.jpeg"
+        ],
+        thumb: "../img/modelo11.jpeg",
+        descricao: "X12 1000W Sport - Versão mais completa com acabamento premium e maior autonomia.",
+        km: "0 km",
+        ano: "2024/2025",
+        cor: "Preto/Prata",
+        potencia: "1200W",
+        autonomia: "100 km",
+        velocidade: "65 km/h",
+        bateria: "Lítio 72V 35Ah",
+        telefone: "5511999999999"
+    }
 ];
 
-document.addEventListener('DOMContentLoaded', function() {
+// RESTO DO CÓDIGO IGUAL...
+document.addEventListener('DOMContentLoaded', function () {
+    if (document.getElementById('motosContainer')) {
+        renderMotosGrid();
+    }
+
+    if (document.getElementById('motoDetalhes')) {
+        carregarDetalhes();
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('🔍 det_prods.js carregado!');
+
     const urlParams = new URLSearchParams(window.location.search);
     const motoId = parseInt(urlParams.get('id'));
+    console.log('📊 ID da moto:', motoId);
+    console.log('🔗 URL completa:', window.location.href);
+
     const moto = motos.find(m => m.id === motoId);
-    
+    console.log('🏍️ Moto encontrada:', moto ? moto.nome : 'NENHUMA');
+
     if (moto) {
         renderMotoDetalhes(moto);
     } else {
-        document.getElementById('motoDetalhes').innerHTML = '<h2 style="text-align:center;">Moto não encontrada!</h2>';
+        document.getElementById('motoDetalhes').innerHTML = `
+            <div style="text-align:center; padding: 50px;">
+                <h2>❌ Moto não encontrada!</h2>
+                <p>ID: ${motoId}</p>
+                <p><a href="home_prods.html" class="cta-button">← Voltar para Motos</a></p>
+            </div>
+        `;
+        console.error('❌ Moto ID', motoId, 'não encontrada no array!');
     }
 });
 
 function renderMotoDetalhes(moto) {
-    document.getElementById('motoDetalhes').innerHTML = `
+    console.log('🎨 Renderizando detalhes da moto:', moto.nome);
+
+    const container = document.getElementById('motoDetalhes');
+    if (!container) {
+        console.error('❌ #motoDetalhes não encontrado!');
+        return;
+    }
+
+    container.innerHTML = `
         <div class="moto-gallery">
             <div class="gallery-main">
-                <img id="mainImage" src="${moto.imagens[0]}" alt="${moto.nome}">
+                <img id="mainImage" src="${moto.imagens[0]}" alt="${moto.nome}" 
+                     onerror="console.log('❌ Erro imagem principal:', this.src)">
             </div>
             <div class="gallery-thumbs">
                 ${moto.imagens.map((img, index) => `
-                    <img src="${img}" alt="Foto ${index + 1}" onclick="trocarFoto('${img}')" class="${index === 0 ? 'active' : ''}">
+                    <img src="${img}" alt="Foto ${index + 1}" 
+                         onclick="trocarFoto('${img}')" 
+                         class="${index === 0 ? 'active' : ''}"
+                         onerror="console.log('❌ Erro thumb:', this.src)">
                 `).join('')}
             </div>
         </div>
@@ -67,10 +186,16 @@ function renderMotoDetalhes(moto) {
             </div>
         </div>
     `;
+
+    console.log('✅ Detalhes renderizados!');
 }
 
 function trocarFoto(src) {
-    document.getElementById('mainImage').src = src;
+    console.log('📸 Trocando foto para:', src);
+    const mainImage = document.getElementById('mainImage');
+    if (mainImage) {
+        mainImage.src = src;
+    }
     document.querySelectorAll('.gallery-thumbs img').forEach(img => img.classList.remove('active'));
     event.target.classList.add('active');
 }

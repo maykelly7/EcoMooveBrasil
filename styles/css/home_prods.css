@@ -37,13 +37,13 @@ nav {
 }
 
 .logo, .logo a {
-    font-size: 1.8rem;
     font-weight: 700;
-    background: linear-gradient(45deg, #00ff88, #00cc6a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+    color: #fff;
     text-decoration: none;
 }
+
 
 .cta-button {
     background: #00ff88;
@@ -127,8 +127,8 @@ main {
 
 .moto-card:hover {
     transform: translateY(-15px);
-    border-color: #00ff88;
-    box-shadow: 0 30px 60px rgba(0, 255, 136, 0.3);
+    border-color: #00ff88b9;
+    box-shadow: 0 30px 30px rgba(0, 255, 136, 0.3);
 }
 
 .moto-image-container {
@@ -148,21 +148,7 @@ main {
     transform: scale(1.1);
 }
 
-.moto-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, rgba(0, 255, 136, 0.9), rgba(0, 204, 106, 0.9));
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    gap: 10px;
-}
+
 
 .moto-card:hover .moto-overlay {
     opacity: 1;
@@ -385,6 +371,7 @@ main {
     border-radius: 50px;
     text-decoration: none;
     transition: all 0.3s ease;
+    color: white;
     box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
 }
 
@@ -416,7 +403,7 @@ main {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    
+
     .gallery-main {
         height: 400px;
     }
@@ -426,32 +413,32 @@ main {
     .hero h1 {
         font-size: 2.5rem;
     }
-    
+
     .hero p {
         font-size: 1.2rem;
     }
-    
+
     .motos-container {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    
+
     .moto-card:hover {
         transform: translateY(-10px);
     }
-    
+
     .moto-header h1 {
         font-size: 2.2rem;
     }
-    
+
     .moto-preco-final {
         font-size: 2.8rem;
     }
-    
+
     .moto-specs {
         grid-template-columns: 1fr;
     }
-    
+
     .whatsapp-btn {
         font-size: 1.1rem;
         padding: 18px 30px !important;
@@ -462,25 +449,25 @@ main {
     .container {
         padding: 0 15px;
     }
-    
+
     main {
         padding: 60px 0 40px;
     }
-    
+
     .moto-meta {
         flex-direction: column;
         gap: 5px;
     }
-    
+
     .gallery-thumbs {
         gap: 8px;
     }
-    
+
     .gallery-thumbs img {
         width: 60px;
         height: 60px;
     }
-    
+
     .moto-actions {
         flex-direction: column;
     }
@@ -492,17 +479,30 @@ main {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-.moto-card, .spec-item {
+.moto-card,
+.spec-item {
     animation: fadeInUp 0.6s ease forwards;
 }
 
-.moto-card:nth-child(1) { animation-delay: 0.1s; }
-.moto-card:nth-child(2) { animation-delay: 0.2s; }
-.moto-card:nth-child(3) { animation-delay: 0.3s; }
-.moto-card:nth-child(4) { animation-delay: 0.4s; }
+.moto-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.moto-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.moto-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.moto-card:nth-child(4) {
+    animation-delay: 0.4s;
+}

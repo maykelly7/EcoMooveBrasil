@@ -1,83 +1,112 @@
 const motos = [
     {
         id: 1,
-        nome: "Honda CG 160 2022",
+        nome: "EG1 Essencial",
         preco: 15900,
-        imagens: ["../img/moto1-1.jpg", "../img/moto1-2.jpg", "../img/moto1-3.jpg", "../img/moto1-4.jpg"],
-        thumb: "../img/moto1-thumb.jpg",
-        descricao: "Honda CG 160 2022 em estado impecável! Pouco uso, manutenção em dia, pneus novos. Ideal para quem quer economia e confiabilidade.",
-        km: "12.500 km",
-        ano: "2022/2023",
-        cor: "Vermelha",
-        potencia: "15cv",
+        imagens: ["../img/modelo1.jpeg", "../img/modelo2.jpeg", "../img/modelo3.jpeg"],
+        thumb: "../img/modelo1.jpeg",
+        descricao: "EG1 Essencial - Scooter elétrica urbana ideal para o dia a dia. Econômica, silenciosa e sustentável.",
+        km: "0 km",
+        ano: "2023/2024",
+        cor: "Preto Fosco",
+        potencia: "1000W",
+        autonomia: "60 km",
+        velocidade: "45 km/h",
+        bateria: "Lítio 60V 20Ah",
         telefone: "5511999999999"
     },
     {
         id: 2,
-        nome: "Yamaha Fazer 250 2021",
+        nome: "JET 1000W",
         preco: 18900,
-        imagens: ["../img/moto2-1.jpg", "../img/moto2-2.jpg", "../img/moto2-3.jpg", "../img/moto2-4.jpg"],
-        thumb: "../img/moto2-thumb.jpg",
-        descricao: "Yamaha Fazer 250 2021 ABS! Linda, revisada, escapamento esportivo. Perfeita para cidade e estrada.",
-        km: "18.200 km",
-        ano: "2021/2022",
+        imagens: ["../img/modelo4.jpeg", "../img/modelo5.jpeg", "../img/modelo6.jpeg"],
+        thumb: "../img/modelo4.jpeg",
+        descricao: "JET 1000W - Scooter elétrica com ótimo desempenho urbano, design esportivo e baixo custo de manutenção.",
+        km: "0 km",
+        ano: "2023/2024",
         cor: "Azul Escuro",
-        potencia: "21cv",
+        potencia: "1000W",
+        autonomia: "70 km",
+        velocidade: "50 km/h",
+        bateria: "Lítio 60V 25Ah",
         telefone: "5511999999999"
     },
     {
         id: 3,
-        nome: "Honda CB 300R 2023",
+        nome: "DOT 1000W",
         preco: 24900,
-        imagens: ["../img/moto3-1.jpg", "../img/moto3-2.jpg", "../img/moto3-3.jpg", "../img/moto3-4.jpg"],
-        thumb: "../img/moto3-thumb.jpg",
-        descricao: "CB 300R 2023 Twister! Quase zero km, acabamento premium, freios ABS. Uma das melhores motos da categoria!",
-        km: "3.800 km",
-        ano: "2023/2024",
-        cor: "Preta Fosca",
-        potencia: "25cv",
+        imagens: ["../img/modelo7.jpeg", "../img/modelo8.jpeg", "../img/modelo9.jpeg"],
+        thumb: "../img/modelo7.jpeg",
+        descricao: "DOT 1000W - Scooter elétrica moderna com ótima autonomia e bateria de alta durabilidade.",
+        km: "0 km",
+        ano: "2024/2025",
+        cor: "Cinza Fosco",
+        potencia: "1000W",
+        autonomia: "80 km",
+        velocidade: "55 km/h",
+        bateria: "Lítio 60V 30Ah",
         telefone: "5511999999999"
     },
     {
         id: 4,
-        nome: "Suzuki GSX 650 2020",
+        nome: "X12 1000W",
         preco: 28900,
-        imagens: ["../img/moto4-1.jpg", "../img/moto4-2.jpg", "../img/moto4-3.jpg", "../img/moto4-4.jpg"],
-        thumb: "../img/moto4-thumb.jpg",
-        descricao: "GSX 650 2020 importada! Motor 4 cilindros, suspensão ajustável, alta performance. Para quem gosta de emoção!",
-        km: "22.000 km",
-        ano: "2020/2021",
+        imagens: ["../img/modelo10.jpeg", "../img/modelo11.jpeg", "../img/modelo12.jpeg", "../img/modelo13.jpeg"],
+        thumb: "../img/modelo10.jpeg",
+        descricao: "X12 1000W - Scooter elétrica premium com maior potência, conforto e tecnologia embarcada.",
+        km: "0 km",
+        ano: "2024/2025",
         cor: "Prata/Preta",
-        potencia: "65cv",
+        potencia: "1200W",
+        autonomia: "90 km",
+        velocidade: "60 km/h",
+        bateria: "Lítio 72V 30Ah",
         telefone: "5511999999999"
     }
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('🚀 JS carregado! Renderizando motos...');
+    console.log('📱 Caminho das imagens testado:', motos[0].thumb);
     renderMotosGrid();
 });
 
 function renderMotosGrid() {
+    console.log('🎨 Iniciando renderização do grid...');
+    
     const container = document.getElementById('motosContainer');
-    container.innerHTML = motos.map((moto, index) => `
-        <div class="moto-card" onclick="abrirDetalhes(${moto.id})">
-            <div class="moto-image-container">
-                <img src="${moto.thumb}" alt="${moto.nome}" loading="lazy">
-                <div class="moto-overlay">
-                    <i class="fas fa-search-plus"></i>
-                    <span>Ver Detalhes</span>
+    if (!container) {
+        console.error('❌ ERRO: #motosContainer não encontrado!');
+        return;
+    }
+    
+    const html = motos.map((moto, index) => {
+        console.log(`🖼️ Moto ${index + 1}:`, moto.thumb);
+        return `
+            <div class="moto-card" onclick="abrirDetalhes(${moto.id})">
+                <div class="moto-image-container">
+                    <img src="${moto.thumb}" alt="${moto.nome}" loading="lazy" 
+                         onerror="this.src='../img/moto1.jpeg'; console.log('🔄 Imagem fallback:', this.src)"
+                         onload="console.log('✅ Imagem carregada:', this.src)">
+                    <div class="moto-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Ver Detalhes</span>
+                    </div>
+                </div>
+                <div class="moto-info">
+                    <h3>${moto.nome}</h3>
+                    <div class="moto-meta">
+                        <span><i class="fas fa-road"></i> ${moto.km}</span>
+                        <span><i class="fas fa-calendar"></i> ${moto.ano}</span>
+                    </div>
+                    <div class="moto-preco">R$ ${formatarPreco(moto.preco)}</div>
                 </div>
             </div>
-            <div class="moto-info">
-                <h3>${moto.nome}</h3>
-                <div class="moto-meta">
-                    <span><i class="fas fa-road"></i> ${moto.km}</span>
-                    <span><i class="fas fa-calendar"></i> ${moto.ano}</span>
-                </div>
-                <div class="moto-preco">R$ ${formatarPreco(moto.preco)}</div>
-            </div>
-        </div>
-    `).join('');
+        `;
+    }).join('');
+    
+    container.innerHTML = html;
+    console.log('✅ Grid renderizado com sucesso!');
 }
 
 function formatarPreco(preco) {
@@ -85,6 +114,6 @@ function formatarPreco(preco) {
 }
 
 function abrirDetalhes(id) {
-    const moto = motos.find(m => m.id === id);
+    console.log('🔗 Abrindo detalhes da moto:', id);
     window.open('det_prods.html?id=' + id, '_blank');
 }
