@@ -1,87 +1,81 @@
-const motos = [
+const motosPrincipais = [
     {
         id: 1,
-        nome: "EG1 Essential",
-        preco: 22900,
-        imagens: ["../img/modelo1.jpeg", "../img/modelo2.jpeg", "../img/modelo3.jpeg"],
+        nome: "EG1 2026",
+        preco: 23900,
         thumb: "../img/modelo1.jpeg",
-        descricao: "EG1 Essencial - Scooter elétrica urbana ideal para o dia a dia. Econômica, silenciosa e sustentável.",
         km: "0 km",
-        ano: "2023/2024",
-        cor: "Preto Fosco",
-        potencia: "1000W",
-        autonomia: "60 km",
-        velocidade: "45 km/h",
-        bateria: "Lítio 60V 20Ah",
-        telefone: "5511999999999"
+        ano: "2026",
     },
     {
         id: 2,
-        nome: "ES1",
-        preco: 21500,
-        imagens: ["../img/modelo4.jpeg", "../img/modelo5.jpeg", "../img/modelo6.jpeg"],
-        thumb: "../img/modelo4.jpeg",
-        descricao: "JET 1000W - Scooter elétrica com ótimo desempenho urbano, design esportivo e baixo custo de manutenção.",
+        nome: "EG1 Essential",
+        preco: 22900,
+        thumb: "../img/modelo2.jpeg",
         km: "0 km",
-        ano: "2023/2024",
-        cor: "Azul Escuro",
-        potencia: "1000W",
-        autonomia: "70 km",
-        velocidade: "50 km/h",
-        bateria: "Lítio 60V 25Ah",
-        telefone: "5511999999999"
+        ano: "2025",
     },
     {
         id: 3,
-        nome: "DOT 1000W",
-        preco: 24900,
-        imagens: ["../img/modelo7.jpeg", "../img/modelo8.jpeg", "../img/modelo9.jpeg"],
-        thumb: "../img/modelo8.jpeg",
-        descricao: "DOT 1000W - Scooter elétrica moderna com ótima autonomia e bateria de alta durabilidade.",
+        nome: "ES1 2025",
+        preco: 21500,
+        thumb: "../img/modelo4.jpeg",
         km: "0 km",
-        ano: "2024/2025",
-        cor: "Cinza Fosco",
-        potencia: "1000W",
-        autonomia: "80 km",
-        velocidade: "55 km/h",
-        bateria: "Lítio 60V 30Ah",
-        telefone: "5511999999999"
+        ano: "2025",
     },
     {
         id: 4,
-        nome: "X12 1000W",
-        preco: 28900,
-        imagens: ["../img/modelo10.jpeg", "../img/modelo11.jpeg", "../img/modelo12.jpeg", "../img/modelo13.jpeg"],
-        thumb: "../img/modelo10.jpeg",
-        descricao: "X12 1000W - Scooter elétrica premium com maior potência, conforto e tecnologia embarcada.",
+        nome: "ES1 2026",
+        preco: 25500,
+        thumb: "../img/modelo5.jpeg",
         km: "0 km",
-        ano: "2024/2025",
-        cor: "Prata/Preta",
-        potencia: "1200W",
-        autonomia: "90 km",
-        velocidade: "60 km/h",
-        bateria: "Lítio 72V 30Ah",
-        telefone: "5511999999999"
+        ano: "2026",
     }
 ];
 
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('🚀 JS carregado! Renderizando motos...');
-    console.log('📱 Caminho das imagens testado:', motos[0].thumb);
-    renderMotosGrid();
+const motosAuto = [
+    // Na home_prods.js - motosAuto[0]
+    {
+        id: 5,
+        nome: "Scooter Dot  1.000Watts",
+        preco: 13500,
+        thumb: "../img/modelo11.jpeg",  // Mudança sincronizada
+        km: "0 km",
+        ano: "2025",
+    },
+    {
+        id: 6,
+        nome: "Jet 1000Watts",
+        preco: 12500,
+        thumb: "../img/modelo10.jpeg",
+        km: "0 km",
+        ano: "2025",
+    },
+    {
+        id: 7,
+        nome: "X12",
+        preco: 12500,
+        thumb: "../img/modelo9.jpeg",
+        km: "0 km",
+        ano: "2025",
+    }
+];
+
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('🚀 JS carregado! Renderizando seções...');
+    renderMotos("motosPrincipais", motosPrincipais);
+    renderMotos("motosAuto", motosAuto);
 });
 
-function renderMotosGrid() {
-    console.log('🎨 Iniciando renderização do grid...');
-    
-    const container = document.getElementById('motosContainer');
+function renderMotos(containerId, lista) {
+    const container = document.getElementById(containerId);
     if (!container) {
-        console.error('❌ ERRO: #motosContainer não encontrado!');
+        console.error('❌ ERRO: #' + containerId + ' não encontrado!');
         return;
     }
-    
-    const html = motos.map((moto, index) => {
-        console.log(`🖼️ Moto ${index + 1}:`, moto.thumb);
+
+    const html = lista.map((moto, index) => {
+        console.log(`🖼️ ${containerId} - Moto ${index + 1}:`, moto.thumb);
         return `
             <div class="moto-card" onclick="abrirDetalhes(${moto.id})">
                 <div class="moto-image-container">
@@ -104,9 +98,9 @@ function renderMotosGrid() {
             </div>
         `;
     }).join('');
-    
+
     container.innerHTML = html;
-    console.log('✅ Grid renderizado com sucesso!');
+    console.log(`✅ ${containerId} renderizado com sucesso!`);
 }
 
 function formatarPreco(preco) {

@@ -38,6 +38,14 @@ body {
     opacity: 1;
 }
 
+.secao-titulo {
+    font-size: 2rem;
+    margin: 40px 0 20px;
+    font-weight: 700;
+    color: #00ff88;
+    text-align: center;
+}
+
 /* HEADER COMUM */
 header {
     background: rgba(0, 0, 0, 0.95);
@@ -379,6 +387,41 @@ main {
     gap: 15px;
 }
 
+
+/* TÍTULOS DAS SEÇÕES */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 50px;
+    background: linear-gradient(45deg, #fff, #00ff88);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+.section-title span {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #00ff88;
+    background: rgba(0, 255, 136, 0.1);
+    padding: 8px 20px;
+    border-radius: 25px;
+    border: 2px solid #00ff88;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    .section-title span {
+        display: block;
+        margin: 10px 0 0 0;
+    }
+}
+
 .whatsapp-btn {
     background: #25D366 !important;
     font-size: 1.3rem;
@@ -415,6 +458,33 @@ main {
     background: #333;
     border-color: #00ff88;
     color: #00ff88;
+}
+
+/* ADICIONE ESTE CSS no final do seu CSS existente */
+.moto-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 255, 136, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: #000;
+    gap: 10px;
+}
+
+.moto-overlay i {
+    font-size: 2.5rem;
+}
+
+.moto-overlay span {
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
 /* RESPONSIVO */

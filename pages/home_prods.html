@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>scooters à Venda - EcoMoove</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <title>Scooters à Venda - EcoMoove</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../styles/css/home_prods.css">
 </head>
-
 <body>
     <header>
         <nav class="container">
@@ -24,17 +21,25 @@
             <div class="logo-hero">
                 <img src="../img/fundoEscuroSemFndo.png" alt="EcoMoove Logo">
             </div>
+
             <section class="hero">
                 <p>Qualidade garantida! Escolha sua moto e entre em contato pelo WhatsApp</p>
             </section>
 
-            <section class="motos-grid" id="motos">
-                <div class="motos-container" id="motosContainer"></div>
+            <!-- PRIMEIRA SEÇÃO: EG1 e ES1 (como pedido) -->
+            <section class="motos-grid">
+                <h2 class="section-title">EG1 & ES1</h2>
+                <div class="motos-container" id="motosPrincipais"></div>
+            </section>
+
+            <!-- SEGUNDA SEÇÃO: Autopropelidos (DOT, JET, X12) -->
+            <section class="motos-grid">
+                <h2 class="section-title">Autopropelidos <span>(Não precisam de CNH)</span></h2>
+                <div class="motos-container" id="motosAuto"></div>
             </section>
         </div>
     </main>
 
     <script src="../styles/js/home_prods.js"></script>
 </body>
-
 </html>
