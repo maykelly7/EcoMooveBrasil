@@ -2,7 +2,7 @@ const motosPrincipais = [
     {
         id: 1,
         nome: "EG1 2026",
-        preco: 23900,
+        preco: 27500,
         thumb: "../img/modelo1.jpeg",
         km: "0 km",
         ano: "2026",
@@ -12,6 +12,14 @@ const motosPrincipais = [
         nome: "EG1 Essential",
         preco: 22900,
         thumb: "../img/modelo2.jpeg",
+        km: "0 km",
+        ano: "2025",
+    },
+    {
+        id: 8, // Novo ID para EG1 2025
+        nome: "EG1 2025",
+        preco: 25500,
+        thumb: "../img/modelo1.jpeg", // Usando mesma imagem da EG1 ou altere conforme necessário
         km: "0 km",
         ano: "2025",
     },
@@ -31,15 +39,18 @@ const motosPrincipais = [
         km: "0 km",
         ano: "2026",
     }
+
 ];
 
 const motosAuto = [
-    // Na home_prods.js - motosAuto[0]
+    // Scooters elétricas (precisam de CNH)
+    
+    // Scooters elétricas sem CNH (até 1000W)
     {
         id: 5,
-        nome: "Scooter Dot  1.000Watts",
+        nome: "Scooter Dot 1.000Watts",
         preco: 13500,
-        thumb: "../img/modelo11.jpeg",  // Mudança sincronizada
+        thumb: "../img/modelo9.jpeg",
         km: "0 km",
         ano: "2025",
     },
@@ -47,7 +58,7 @@ const motosAuto = [
         id: 6,
         nome: "Jet 1000Watts",
         preco: 12500,
-        thumb: "../img/modelo10.jpeg",
+        thumb: "../img/modelo11.jpeg",
         km: "0 km",
         ano: "2025",
     },
@@ -55,7 +66,7 @@ const motosAuto = [
         id: 7,
         nome: "X12",
         preco: 12500,
-        thumb: "../img/modelo9.jpeg",
+        thumb: "../img/modelo10.jpeg",
         km: "0 km",
         ano: "2025",
     }
@@ -100,7 +111,7 @@ function renderMotos(containerId, lista) {
     }).join('');
 
     container.innerHTML = html;
-    console.log(`✅ ${containerId} renderizado com sucesso!`);
+    console.log(`✅ ${containerId} renderizado com sucesso! (${lista.length} itens)`);
 }
 
 function formatarPreco(preco) {
