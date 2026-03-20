@@ -389,7 +389,7 @@ main {
 
 
 /* TÍTULOS DAS SEÇÕES */
-.section-title {
+.section-title {    
     font-size: 2.5rem;
     font-weight: 700;
     text-align: center;
@@ -400,11 +400,11 @@ main {
     position: relative;
 }
 
+
 .section-title span {
     font-size: 1.2rem;
     font-weight: 400;
     color: #00ff88;
-    background: rgba(0, 255, 136, 0.1);
     padding: 8px 20px;
     border-radius: 25px;
     border: 2px solid #00ff88;

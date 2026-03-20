@@ -15,7 +15,7 @@ const motos = [
         autonomia: "70 km",
         velocidade: "50 km/h",
         bateria: "Lítio 60V 25Ah",
-        telefone: "5511999999999"
+        telefone: "(85) 99199-1212"
     },
     {
         id: 2,
@@ -31,7 +31,7 @@ const motos = [
         autonomia: "60 km",
         velocidade: "45 km/h",
         bateria: "Lítio 60V 20Ah",
-        telefone: "5511999999999"
+        telefone: "(85) 99199-1212"
     },
     {
         id: 3,
@@ -47,7 +47,7 @@ const motos = [
         autonomia: "70 km",
         velocidade: "50 km/h",
         bateria: "Lítio 60V 25Ah",
-        telefone: "5511999999999"
+        telefone: "(85) 99199-1212"
     },
     {
         id: 4,
@@ -63,7 +63,7 @@ const motos = [
         autonomia: "80 km",
         velocidade: "55 km/h",
         bateria: "Lítio 60V 30Ah",
-        telefone: "5511999999999"
+        telefone: "(85) 99199-1212"
     },
     // AUTOPROPELIDOS
     {
@@ -80,7 +80,7 @@ const motos = [
         autonomia: "80 km",
         velocidade: "55 km/h",
         bateria: "Lítio 60V 30Ah",
-        telefone: "5511999999999"
+        telefone: "(85) 99199-1212"
     },
     {
         id: 6,
@@ -96,7 +96,7 @@ const motos = [
         autonomia: "70 km",
         velocidade: "50 km/h",
         bateria: "Lítio 60V 25Ah",
-        telefone: "5511999999999"
+        telefone: "(85) 99199-1212"
     },
     {
         id: 7,
@@ -112,7 +112,7 @@ const motos = [
         autonomia: "40 a 50 km",
         velocidade: "32 km/h",
         bateria: "Lítio 60V 20Ah (removível)",
-        telefone: "5511999999999"
+        telefone: "(85) 99199-1212"
     }
 ];
 
@@ -205,7 +205,7 @@ function renderMotoDetalhes(moto) {
             </div>
 
             <div class="moto-actions">
-                <a href="https://wa.me/${moto.telefone}?text=👋 Olá! Tenho interesse na *${moto.nome}*!\n\n💰 Valor: R$ ${formatarPreco(moto.preco)}\n📏 ${moto.km} | 🎯 ${moto.ano}\n⚡ ${moto.potencia} | ${moto.autonomia}\n\nPode me passar mais detalhes? 📲" 
+                <a href="https://w.app/ecomoove" 
                    class="whatsapp-btn" target="_blank">
                     <i class="fab fa-whatsapp"></i> Falar no WhatsApp
                 </a>
