@@ -13,7 +13,7 @@ const motosPrincipais = [
         preco: 22900,
         thumb: "../img/modelo2.jpeg",
         km: "0 km",
-        ano: "2025",
+        ano: "2026",
     },
     {
         id: 8, // Novo ID para EG1 2025
