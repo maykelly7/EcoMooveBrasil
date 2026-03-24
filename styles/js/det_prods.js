@@ -243,9 +243,6 @@ function renderMotoDetalhes(moto) {
                    class="whatsapp-btn" target="_blank">
                     <i class="fab fa-whatsapp"></i> Falar no WhatsApp
                 </a>
-                <a href="home_prods.html" class="back-btn">
-                    <i class="fas fa-arrow-left"></i> Ver Todas Scooters
-                </a>
             </div>
         </div>
     `;
